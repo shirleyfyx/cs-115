@@ -1,0 +1,20 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname a03q1) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+;;
+;; *************************************
+;;    Shirley Fang (20973189)
+;;    CS 115 Winter 2024
+;;    Assignment 03, Question 1
+;; *************************************
+;;
+
+;; (card<=? suit1 rank1 suit2 rank2) produces the bool to determine whether
+;;   suit1 comes before suit2 in Bridge ordering, or suit1 and suit2 are the
+;;   same and rank1 <= rank2
+;; card<=?: Sym Nat Sym Nat -> Bool
+;; Examples:
+(check-expect (card<=? 'Diamonds 3 'Spades 3) True)
+(check-expect (card<=? 'Spades 5 'Diamonds 3) False)
+
+

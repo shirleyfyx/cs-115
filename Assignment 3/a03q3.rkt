@@ -1,0 +1,34 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname a03q3) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+;;
+;; *************************************
+;;    Shirley Fang (20973189)
+;;    CS 115 Winter 2024
+;;    Assignment 03, Question 3
+;; *************************************
+;;
+
+
+;; (hrate age target) finds the heart rage range for sepcific age
+;;  and target level of the max heart rate
+;; hrate: Nat Sym -> Str
+
+;; Example:
+(check-expect (hrate 50 'moderate) "Target heart rate range: 109 - 129 bpm")
+(check-expect (hrate 20 'vigorous) "Target heart rate range: 154 - 186 bpm")
+
+(define (hrate age target)
+  (cond
+    [(equal? target 'moderate)
+     (string-append "Target heart rate range: "
+     (number->string(round (* (- 220 age) 0.64))) " - "
+     (number->string(round(* (- 220 age) 0.76))) " bpm")]
+    [(equal? target 'vigorous)
+     (string-append "Target heart rate range: "
+     (number->string(round(* (- 220 age) 0.77))) " - "
+     (number->string(round(* (- 220 age) 0.93))) " bpm")]))
+
+;; Tests:
+(check-expect (hrate 0 'moderate) "Target heart rate range: 141 - 167 bpm")
+(check-expect (hrate 50 'vigorous) "Target heart rate range: 131 - 158 bpm")

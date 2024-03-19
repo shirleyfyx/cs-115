@@ -1,0 +1,13 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname a01q1) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+;;
+;; *************************************
+;;    Shirley Fang (20973189)
+;;    CS 115 Winter 2024
+;;    Assignment 01, Question 1
+;; *************************************
+;;
+
+(define (points-per-game fg 3pt ft gp)
+  (/ (+ (* 2 fg) (* 3 3pt) ft) gp))

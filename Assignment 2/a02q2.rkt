@@ -1,0 +1,21 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname a02q2) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+;;
+;; *************************************
+;;    Shirley Fang (20973189)
+;;    CS 115 Winter 2024
+;;    Assignment 02, Question 2
+;; *************************************
+;;
+
+;; Helper function to find the first three digits in a phone number
+(define (first-three-digit number)
+  (quotient number 10000000))
+
+(define (gta-number? phone-number)
+  (cond
+    [(= (first-three-digit phone-number) 416) true]
+    [(= (first-three-digit phone-number) 437) true]
+    [(= (first-three-digit phone-number) 647) true]
+    [else false]))
